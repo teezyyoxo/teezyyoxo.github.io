@@ -14,11 +14,11 @@ import GitHubPanel from '../components/GitHubPanel.astro';
     <a href="#top">Home</a>
     <a href="#projects">Projects</a>
     <a href="#lab">Lab</a>
-    <a href="#aviation">Aviation</a>
-    <a href="#contact">Contact</a>
+    <a href="#scope">Scope</a>
+    <a href="#profile">Profile</a>
   </nav>
 
-  <a href="#contact" class="resume">Let's Talk</a>
+  <a href="https://github.com/teezyyoxo" target="_blank" rel="noreferrer" class="resume">GitHub</a>
 </header>
 
 <Hero />
@@ -26,31 +26,31 @@ import GitHubPanel from '../components/GitHubPanel.astro';
 <section class="projects" id="projects">
 
   <div class="title">
-    <h2>Featured Systems</h2>
-    <p>Projects bridging aviation, infrastructure, and UX engineering.</p>
+    <h2>Project Range</h2>
+    <p>A cross-section of tools, interfaces, infrastructure work, and experiments.</p>
   </div>
 
   <div class="grid">
 
-    <a class="card glass" href="#contact">
+    <article class="card glass">
       <h3>GeoShottr</h3>
-      <p>Flight telemetry + EXIF metadata automation for simulator screenshots.</p>
-    </a>
+      <p>A personal take on screenshot metadata automation, connecting images, location context, and workflow tooling.</p>
+    </article>
 
-    <a class="card glass" href="#contact">
+    <article class="card glass">
       <h3>Flight Overlay HUD</h3>
-      <p>Real-time SimConnect telemetry with responsive glass cockpit UI.</p>
-    </a>
+      <p>Aviation-flavored real-time UI work, turning live data into readable operational displays.</p>
+    </article>
 
-    <a class="card glass" href="#contact">
+    <article class="card glass">
       <h3>HARSharkNGX</h3>
-      <p>Modern HAR analysis dashboard for HTTP diagnostics and debugging.</p>
-    </a>
+      <p>A work-adjacent HAR analysis dashboard shaped by real HTTP debugging and inspection needs.</p>
+    </article>
 
-    <a class="card glass" href="#contact">
+    <article class="card glass">
       <h3>Homelab Infrastructure</h3>
-      <p>Docker, Proxmox, Kubernetes, Homebridge, and self-hosted systems.</p>
-    </a>
+      <p>Self-hosted services, containers, automation, and the operational glue around them.</p>
+    </article>
 
   </div>
 
@@ -58,46 +58,61 @@ import GitHubPanel from '../components/GitHubPanel.astro';
 
 <GitHubPanel />
 
-<section class="aviation" id="aviation">
+<section class="scope" id="scope">
   <div>
-    <p class="section-kicker">Aviation Focus</p>
-    <h2>Interfaces For Systems That Move</h2>
+    <p class="section-kicker">Scope</p>
+    <h2>Not One Lane, A Working Range</h2>
   </div>
 
   <p>
-    My work blends flight simulation, telemetry, diagnostics, and infrastructure.
-    The goal is practical software that feels calm under pressure: readable data,
-    fast feedback, and tools that make complex systems easier to operate.
+    Aviation is one influence in the visual style, but the work itself is broader:
+    developer utilities, debugging tools, data-driven interfaces, homelab systems,
+    automation workflows, and experiments that start as curiosity or day-job
+    friction and turn into usable software.
   </p>
 
-  <div class="aviation-grid">
+  <div class="scope-grid">
     <div>
-      <strong>Telemetry</strong>
-      <span>SimConnect workflows, HUD overlays, and flight-state display.</span>
+      <strong>Product Interfaces</strong>
+      <span>Dashboards, portfolio experiences, workflow tools, and clean front-end systems.</span>
     </div>
     <div>
       <strong>Infrastructure</strong>
-      <span>Self-hosted services, containers, monitoring, and automation.</span>
+      <span>Docker, Proxmox, self-hosted services, monitoring, and repeatable setups.</span>
     </div>
     <div>
-      <strong>Experience</strong>
-      <span>Responsive interfaces with a cockpit-inspired visual language.</span>
+      <strong>Diagnostics</strong>
+      <span>HAR analysis, network inspection, metadata workflows, logs, APIs, and tools for understanding systems.</span>
+    </div>
+    <div>
+      <strong>Automation</strong>
+      <span>Scripts, integrations, background jobs, and glue code that removes repetitive work.</span>
+    </div>
+    <div>
+      <strong>Creative Experiments</strong>
+      <span>Interactive ideas, visual polish, small prototypes, and projects built to learn fast.</span>
+    </div>
+    <div>
+      <strong>Aviation Systems</strong>
+      <span>Flight-sim overlays, telemetry displays, and cockpit-inspired interaction patterns.</span>
     </div>
   </div>
 </section>
 
-<section class="contact" id="contact">
+<section class="profile" id="profile">
   <div>
-    <p class="section-kicker">Contact</p>
-    <h2>Build Something Flight-Ready</h2>
+    <p class="section-kicker">Profile</p>
+    <h2>Personal Builds, Real Problems</h2>
     <p>
-      I am open to engineering, automation, infrastructure, and aviation-adjacent
-      software work.
+      This site is a map of things I make, remix, and refine: hobby projects,
+      work-adjacent utilities, experiments, and tools that solve problems I have
+      actually run into.
     </p>
   </div>
 
-  <div class="contact-actions">
+  <div class="profile-actions">
     <a href="https://github.com/teezyyoxo" target="_blank" rel="noreferrer">GitHub</a>
+    <a href="https://github.com/teezyyoxo?tab=repositories" target="_blank" rel="noreferrer">Repositories</a>
     <a href="https://www.linkedin.com/in/montelgray/" target="_blank" rel="noreferrer">LinkedIn</a>
   </div>
 </section>
@@ -105,11 +120,12 @@ import GitHubPanel from '../components/GitHubPanel.astro';
 <footer>
   <div>
     <h3>Montel Gray</h3>
-    <p>Systems Engineer • Developer • Aviator</p>
+    <p>Developer • Systems Builder • Aviation Enthusiast</p>
   </div>
 
   <div class="links">
     <a href="https://github.com/teezyyoxo" target="_blank" rel="noreferrer">GitHub</a>
+    <a href="https://github.com/teezyyoxo?tab=repositories" target="_blank" rel="noreferrer">Repos</a>
     <a href="https://www.linkedin.com/in/montelgray/" target="_blank" rel="noreferrer">LinkedIn</a>
   </div>
 </footer>
@@ -191,8 +207,8 @@ nav a,
   color:var(--muted);
 }
 
-.aviation,
-.contact{
+.scope,
+.profile{
   margin:80px 8%;
   border-top:1px solid var(--border);
   padding:56px 0 0;
@@ -207,54 +223,54 @@ nav a,
   text-transform:uppercase;
 }
 
-.aviation p,
-.contact p{
+.scope p,
+.profile p{
   margin-top:18px;
   color:var(--muted);
   line-height:1.8;
   max-width:760px;
 }
 
-.aviation-grid{
+.scope-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:18px;
   margin-top:28px;
 }
 
-.aviation-grid div{
+.scope-grid div{
   border:1px solid var(--border);
   border-radius:8px;
   background:rgba(255,255,255,0.03);
   padding:22px;
 }
 
-.aviation-grid strong,
-.aviation-grid span{
+.scope-grid strong,
+.scope-grid span{
   display:block;
 }
 
-.aviation-grid span{
+.scope-grid span{
   color:var(--muted);
   line-height:1.7;
   margin-top:10px;
 }
 
-.contact{
+.profile{
   display:flex;
   justify-content:space-between;
   align-items:flex-end;
   gap:32px;
 }
 
-.contact-actions{
+.profile-actions{
   display:flex;
   gap:14px;
   flex-wrap:wrap;
   justify-content:flex-end;
 }
 
-.contact-actions a{
+.profile-actions a{
   color:var(--accent);
   text-decoration:none;
   border:1px solid var(--border);
@@ -291,21 +307,21 @@ footer p{
     text-align:center;
   }
 
-  .aviation-grid,
-  .contact{
+  .scope-grid,
+  .profile{
     grid-template-columns:1fr;
   }
 
-  .aviation-grid{
+  .scope-grid{
     display:grid;
   }
 
-  .contact{
+  .profile{
     align-items:flex-start;
     flex-direction:column;
   }
 
-  .contact-actions{
+  .profile-actions{
     justify-content:flex-start;
   }
 }

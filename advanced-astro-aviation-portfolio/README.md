@@ -1,8 +1,9 @@
 
-# Montel Gray Aviation Portfolio
+# Montel Gray Portfolio
 
-A modern Astro portfolio for aviation-inspired systems work, telemetry interfaces,
-infrastructure automation, and web engineering.
+A modern Astro portfolio for personal and work-adjacent software projects across
+automation, infrastructure, diagnostics, creative tooling, web interfaces, and
+aviation-inspired systems.
 
 ## Stack
 

@@ -1,7 +1,7 @@
 
 ---
-const title = 'Montel Gray | Aviation Systems Engineer';
-const description = 'Aviation-inspired portfolio for Montel Gray, focused on telemetry systems, infrastructure automation, and modern web experiences.';
+const title = 'Montel Gray | Developer & Systems Builder';
+const description = 'Portfolio for Montel Gray, featuring personal and work-adjacent software projects across automation, infrastructure, diagnostics, creative tooling, web interfaces, and aviation-inspired systems.';
 ---
 
 <!DOCTYPE html>
@@ -121,12 +121,12 @@ const description = 'Aviation-inspired portfolio for Montel Gray, focused on tel
 <div id="loader" class="terminal-loader">
   <div class="terminal-box">
     <div class="terminal-header">
-      avionics://system_boot
+      portfolio://system_boot
     </div>
 
     <div class="terminal-content">
-      <div>> Initializing telemetry modules...</div>
-      <div>> Linking infrastructure services...</div>
+      <div>> Loading project index...</div>
+      <div>> Linking repositories and experiments...</div>
       <div>> Syncing GitHub activity...</div>
       <div class="typing">> Ready</div>
     </div>
@@ -138,9 +138,17 @@ const description = 'Aviation-inspired portfolio for Montel Gray, focused on tel
 <slot />
 
 <script>
-  setTimeout(() => {
-    document.getElementById('loader').classList.add('hidden-loader');
-  }, 3200);
+  function hideLoader(){
+    setTimeout(() => {
+      document.getElementById('loader')?.classList.add('hidden-loader');
+    }, 3200);
+  }
+
+  if(document.readyState === 'complete'){
+    hideLoader();
+  }else{
+    window.addEventListener('load', hideLoader);
+  }
 
   const canvas = document.getElementById('bg');
   const ctx = canvas.getContext('2d');
