@@ -1,0 +1,314 @@
+
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import GitHubPanel from '../components/GitHubPanel.astro';
+---
+
+<Layout>
+
+<header class="nav glass">
+  <div class="logo">✈︎ MONTEL GRAY</div>
+
+  <nav>
+    <a href="#top">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#lab">Lab</a>
+    <a href="#aviation">Aviation</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <a href="#contact" class="resume">Let's Talk</a>
+</header>
+
+<Hero />
+
+<section class="projects" id="projects">
+
+  <div class="title">
+    <h2>Featured Systems</h2>
+    <p>Projects bridging aviation, infrastructure, and UX engineering.</p>
+  </div>
+
+  <div class="grid">
+
+    <a class="card glass" href="#contact">
+      <h3>GeoShottr</h3>
+      <p>Flight telemetry + EXIF metadata automation for simulator screenshots.</p>
+    </a>
+
+    <a class="card glass" href="#contact">
+      <h3>Flight Overlay HUD</h3>
+      <p>Real-time SimConnect telemetry with responsive glass cockpit UI.</p>
+    </a>
+
+    <a class="card glass" href="#contact">
+      <h3>HARSharkNGX</h3>
+      <p>Modern HAR analysis dashboard for HTTP diagnostics and debugging.</p>
+    </a>
+
+    <a class="card glass" href="#contact">
+      <h3>Homelab Infrastructure</h3>
+      <p>Docker, Proxmox, Kubernetes, Homebridge, and self-hosted systems.</p>
+    </a>
+
+  </div>
+
+</section>
+
+<GitHubPanel />
+
+<section class="aviation" id="aviation">
+  <div>
+    <p class="section-kicker">Aviation Focus</p>
+    <h2>Interfaces For Systems That Move</h2>
+  </div>
+
+  <p>
+    My work blends flight simulation, telemetry, diagnostics, and infrastructure.
+    The goal is practical software that feels calm under pressure: readable data,
+    fast feedback, and tools that make complex systems easier to operate.
+  </p>
+
+  <div class="aviation-grid">
+    <div>
+      <strong>Telemetry</strong>
+      <span>SimConnect workflows, HUD overlays, and flight-state display.</span>
+    </div>
+    <div>
+      <strong>Infrastructure</strong>
+      <span>Self-hosted services, containers, monitoring, and automation.</span>
+    </div>
+    <div>
+      <strong>Experience</strong>
+      <span>Responsive interfaces with a cockpit-inspired visual language.</span>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div>
+    <p class="section-kicker">Contact</p>
+    <h2>Build Something Flight-Ready</h2>
+    <p>
+      I am open to engineering, automation, infrastructure, and aviation-adjacent
+      software work.
+    </p>
+  </div>
+
+  <div class="contact-actions">
+    <a href="https://github.com/teezyyoxo" target="_blank" rel="noreferrer">GitHub</a>
+    <a href="https://www.linkedin.com/in/montelgray/" target="_blank" rel="noreferrer">LinkedIn</a>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <h3>Montel Gray</h3>
+    <p>Systems Engineer • Developer • Aviator</p>
+  </div>
+
+  <div class="links">
+    <a href="https://github.com/teezyyoxo" target="_blank" rel="noreferrer">GitHub</a>
+    <a href="https://www.linkedin.com/in/montelgray/" target="_blank" rel="noreferrer">LinkedIn</a>
+  </div>
+</footer>
+
+<style>
+.nav{
+  position:fixed;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(1200px,92%);
+  border-radius:18px;
+  padding:18px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:20;
+}
+
+.logo{
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+nav{
+  display:flex;
+  gap:24px;
+}
+
+nav a,
+.links a{
+  text-decoration:none;
+  color:var(--muted);
+}
+
+.resume{
+  text-decoration:none;
+  color:white;
+  border:1px solid var(--accent);
+  padding:12px 18px;
+  border-radius:8px;
+}
+
+.projects{
+  padding:80px 8%;
+}
+
+.title{
+  margin-bottom:32px;
+}
+
+.title p{
+  margin-top:10px;
+  color:var(--muted);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+}
+
+.card{
+  border-radius:8px;
+  padding:28px;
+  color:var(--text);
+  text-decoration:none;
+  transition:border-color 180ms ease, transform 180ms ease;
+}
+
+.card:hover{
+  border-color:rgba(0,224,184,0.35);
+  transform:translateY(-2px);
+}
+
+.card p{
+  margin-top:14px;
+  line-height:1.7;
+  color:var(--muted);
+}
+
+.aviation,
+.contact{
+  margin:80px 8%;
+  border-top:1px solid var(--border);
+  padding:56px 0 0;
+}
+
+.section-kicker{
+  color:var(--accent);
+  font-family:'JetBrains Mono', monospace;
+  font-size:0.8rem;
+  letter-spacing:3px;
+  margin-bottom:10px;
+  text-transform:uppercase;
+}
+
+.aviation p,
+.contact p{
+  margin-top:18px;
+  color:var(--muted);
+  line-height:1.8;
+  max-width:760px;
+}
+
+.aviation-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:28px;
+}
+
+.aviation-grid div{
+  border:1px solid var(--border);
+  border-radius:8px;
+  background:rgba(255,255,255,0.03);
+  padding:22px;
+}
+
+.aviation-grid strong,
+.aviation-grid span{
+  display:block;
+}
+
+.aviation-grid span{
+  color:var(--muted);
+  line-height:1.7;
+  margin-top:10px;
+}
+
+.contact{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:32px;
+}
+
+.contact-actions{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+.contact-actions a{
+  color:var(--accent);
+  text-decoration:none;
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:12px 16px;
+}
+
+footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:60px 8%;
+}
+
+footer p{
+  color:var(--muted);
+  margin-top:10px;
+}
+
+.links{
+  display:flex;
+  gap:20px;
+}
+
+@media(max-width:900px){
+
+  nav{
+    display:none;
+  }
+
+  footer{
+    flex-direction:column;
+    gap:24px;
+    text-align:center;
+  }
+
+  .aviation-grid,
+  .contact{
+    grid-template-columns:1fr;
+  }
+
+  .aviation-grid{
+    display:grid;
+  }
+
+  .contact{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .contact-actions{
+    justify-content:flex-start;
+  }
+}
+</style>
+
+</Layout>

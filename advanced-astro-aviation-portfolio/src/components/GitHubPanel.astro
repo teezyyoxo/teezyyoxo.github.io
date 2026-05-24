@@ -1,0 +1,153 @@
+
+<section class="github-section" id="lab">
+
+  <div class="header">
+    <div>
+      <p class="section-kicker">Lab</p>
+      <h2>GitHub Activity</h2>
+    </div>
+    <a href="https://github.com/teezyyoxo" target="_blank" rel="noreferrer">View Profile</a>
+  </div>
+
+  <div class="github-grid">
+
+    <div class="github-card">
+      <h3>Recent Public Activity</h3>
+      <ul id="github-feed">
+        <li>Loading GitHub activity...</li>
+      </ul>
+    </div>
+
+    <div class="github-card">
+      <h3>Current Stack</h3>
+
+      <div class="stack">
+        <span>Python</span>
+        <span>SwiftUI</span>
+        <span>Docker</span>
+        <span>Kubernetes</span>
+        <span>Flask</span>
+        <span>Astro</span>
+        <span>Tailwind CSS</span>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+  const username = 'teezyyoxo';
+
+  async function loadGitHub(){
+    const feed = document.getElementById('github-feed');
+
+    try{
+      const res = await fetch(`https://api.github.com/users/${username}/events/public`);
+      if(!res.ok) throw new Error(`GitHub API responded with ${res.status}`);
+
+      const data = await res.json();
+
+      feed.innerHTML = '';
+
+      if(!Array.isArray(data) || data.length === 0){
+        feed.innerHTML = '<li>No recent public activity found.</li>';
+        return;
+      }
+
+      data.slice(0,5).forEach(event => {
+        const li = document.createElement('li');
+        const repo = event.repo?.name || 'unknown repository';
+        const type = event.type.replace('Event', '');
+        li.textContent = `${type} -> ${repo}`;
+        feed.appendChild(li);
+      });
+
+    }catch(err){
+      feed.innerHTML =
+        '<li>GitHub activity is temporarily unavailable.</li>';
+    }
+  }
+
+  loadGitHub();
+</script>
+
+<style>
+.github-section{
+  margin:80px 8%;
+  padding:24px 0 0;
+}
+
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:30px;
+  gap:24px;
+}
+
+.section-kicker{
+  color:var(--accent);
+  font-family:'JetBrains Mono', monospace;
+  font-size:0.8rem;
+  letter-spacing:3px;
+  margin-bottom:10px;
+  text-transform:uppercase;
+}
+
+.header a{
+  color:var(--accent);
+  text-decoration:none;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:10px 14px;
+  white-space:nowrap;
+}
+
+.github-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+
+.github-card{
+  background:rgba(255,255,255,0.03);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:24px;
+}
+
+.github-card h3{
+  margin-bottom:18px;
+}
+
+.github-card ul{
+  list-style:none;
+  color:var(--muted);
+  line-height:2;
+}
+
+.stack{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.stack span{
+  padding:10px 14px;
+  border-radius:8px;
+  background:rgba(255,255,255,0.05);
+  color:var(--muted);
+}
+
+@media(max-width:900px){
+  .header{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .github-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>

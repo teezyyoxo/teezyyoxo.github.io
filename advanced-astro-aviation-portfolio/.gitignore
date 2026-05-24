@@ -1,0 +1,7 @@
+node_modules/
+.astro/
+dist/
+.DS_Store
+.vscode/
+npm-debug.log*
+dev-server*.log
